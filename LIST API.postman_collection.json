@@ -1,0 +1,390 @@
+{
+	"info": {
+		"_postman_id": "70843925-5b83-46e3-89bd-eee0d5cc73c6",
+		"name": "LIST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PRODUCT",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "user1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "user1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\": 1,\r\n    \"totalPrice\": 1,\r\n    \"price\": 1,\r\n    \"depreciation\": 1,\r\n    \"plans\": [\r\n        {\r\n            \"timeLine\": 1\r\n        }\r\n    ],\r\n    \"subProducts\": [\r\n        {\r\n            \"quantity\": 888,\r\n            \"totalPrice\": 888,\r\n            \"price\": 888,\r\n            \"depreciation\": 888\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/api/v1/product",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL PRODUCTS",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "user2",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/api/v1/product",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD PRODUCT TO PRODUCT",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "user1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "user1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldProductIds\": [\r\n        34\r\n    ],\r\n    \"newProducts    \": [\r\n        {\r\n            \"quantity\": 888,\r\n            \"totalPrice\": 888,\r\n            \"price\": 888,\r\n            \"depreciation\": 888\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/product/37",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"37"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PLAN",
+			"item": [
+				{
+					"name": "Add product to plan",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "user1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "user1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldProductIds\": [\r\n        22\r\n    ],\r\n    \"newProducts\": [\r\n        {\r\n            \"quantity\": 888,\r\n            \"totalPrice\": 888,\r\n            \"price\": 888,\r\n            \"depreciation\": 888\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/plan/90/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"plan",
+								"90",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add plan to plan",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "user1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "user1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPlanIds\": [\r\n        52\r\n    ],\r\n    \"newPlan\": [\r\n        {\r\n            \"timeLine\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/v1/plan/53/plan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"plan",
+								"53",
+								"plan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL PLANS",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "user1",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/api/v1/plan",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"plan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Plan",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "user1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "user1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"timeLine\": 99,\r\n    \"childrenPlans\": [\r\n        {\r\n            \"timeLine\": 2\r\n        }\r\n    ],\r\n    \"products\": [\r\n        {\r\n            \"quantity\": 99,\r\n            \"totalPrice\": 99,\r\n            \"price\": 99,\r\n            \"depreciation\": 99,\r\n            \"plans\": [  \r\n                {\r\n                    \"timeLine\": 99\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/api/v1/plan",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"plan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Plan",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "user1",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "user1",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/api/v1/plan/90",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v1",
+								"plan",
+								"90"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET PRODUCT PRICE (TEST STRATEGY PATTERN)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "user2",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/api/v1/product/22/price",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"22",
+						"price"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
